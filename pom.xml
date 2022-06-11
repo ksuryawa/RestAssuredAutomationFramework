@@ -14,7 +14,7 @@
         <testng.version>7.4.0</testng.version>
         <restassured.version>4.5.0</restassured.version>
         <lombok.version>1.18.20</lombok.version>
-        <jackson.version>2.13.1</jackson.version>
+        <jackson.version>2.13.3</jackson.version>
         <javafaker.version>1.0.2</javafaker.version>
         <assertj.version>3.23.1</assertj.version>
     </properties>
@@ -43,7 +43,7 @@
         <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-annotations -->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-annotations</artifactId>
+            <artifactId>jackson-databind</artifactId>
             <version>${jackson.version}</version>
         </dependency>
 
