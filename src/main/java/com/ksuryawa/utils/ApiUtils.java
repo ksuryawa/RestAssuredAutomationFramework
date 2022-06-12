@@ -21,4 +21,5 @@ public final class ApiUtils {
 	public static void storeStringAsJson(String filePath, Response response) {
 		Files.write(Paths.get(filePath), response.asByteArray());
 	}
+
 }
