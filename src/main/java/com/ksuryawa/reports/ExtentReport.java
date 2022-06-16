@@ -6,9 +6,6 @@ import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.ksuryawa.constants.FrameworkConstants;
 import lombok.SneakyThrows;
 
-import java.awt.*;
-import java.io.File;
-
 public final class ExtentReport {
 
 	private static ExtentReports extentReports;
@@ -27,7 +24,7 @@ public final class ExtentReport {
 
 		extentReports.flush();
 
-		Desktop.getDesktop().browse(new File(FrameworkConstants).toURI());
+		//Desktop.getDesktop().browse(new File(FrameworkConstants.getExtentReportFilePath()).toURI());
 
 	}
 

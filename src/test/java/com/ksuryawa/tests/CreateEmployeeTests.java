@@ -17,7 +17,7 @@ import java.io.File;
 import static com.ksuryawa.utils.RandomUtils.*;
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class CreateEmployeeTests extends BaseTest {
+public class CreateEmployeeTests {
 
 	@Test
 	@FrameworkAnnotations
