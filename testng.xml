@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <listeners>
+        <listener class-name="com.ksuryawa.listeners.TestListener"/>
+    </listeners>
+    <test parallel="methods" thread-count="5"
+          name="/Users/kapilsuryawanshi/src/ksuryawa/RestAssuredAutomationFramework">
+        <classes>
+            <class name="com.ksuryawa.tests.CreateEmployeeTests">
+                <methods>
+                    <include name="createEmployee"/>
+                    <include name="createEmployeeUsingExternalFile"/>
+                </methods>
+            </class>
+            <class name="com.ksuryawa.tests.GetEmployeeTests">
+                <methods>
+                    <include name="getEmployees"/>
+                    <include name="getEmployee"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
