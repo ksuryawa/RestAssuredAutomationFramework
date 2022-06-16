@@ -19,6 +19,7 @@ public class GetEmployeeTests {
 				.get("/employees");
 
 		ExtentLogger.logResponse(response.asPrettyString());
+		ExtentLogger.logResponse(String.valueOf(response.statusCode()));
 		response.prettyPrint();
 		System.out.println(response.statusCode());
 
@@ -27,7 +28,7 @@ public class GetEmployeeTests {
 
 	}
 
-	@Test
+	@Test(description = "Get employee details from id")
 	@FrameworkAnnotations
 	public void getEmployee() {
 		Response response = RequestBuilder

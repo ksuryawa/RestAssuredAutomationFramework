@@ -19,7 +19,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class CreateEmployeeTests {
 
-	@Test
+	@Test(description = "Create an Employee using POJO builder")
 	@FrameworkAnnotations
 	public void createEmployee() {
 
@@ -50,7 +50,7 @@ public class CreateEmployeeTests {
 
 	}
 
-	@Test
+	@Test(description = "Create an Employee using External file")
 	@FrameworkAnnotations
 	public void createEmployeeUsingExternalFile() {
 
