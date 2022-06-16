@@ -4,7 +4,6 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.ksuryawa.constants.FrameworkConstants;
-import lombok.SneakyThrows;
 
 public final class ExtentReport {
 
@@ -19,7 +18,6 @@ public final class ExtentReport {
 		extentReports.attachReporter(extentSparkReporter);
 	}
 
-	@SneakyThrows
 	public static void tearDownReports() {
 		extentReports.flush();
 	}
