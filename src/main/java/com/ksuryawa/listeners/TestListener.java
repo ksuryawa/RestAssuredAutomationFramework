@@ -1,5 +1,6 @@
 package com.ksuryawa.listeners;
 
+import com.ksuryawa.annotations.FrameworkAnnotations;
 import com.ksuryawa.reports.ExtentLogger;
 import com.ksuryawa.reports.ExtentReport;
 import org.testng.ISuite;
@@ -21,7 +22,12 @@ public class TestListener implements ITestListener, ISuiteListener {
 
 	@Override
 	public void onTestStart(ITestResult result) {
+
 		ExtentReport.createTest(result.getName());
+		FrameworkAnnotations annotations = result.getMethod().getConstructorOrMethod().getMethod().getAnnotation(FrameworkAnnotations.class);
+
+		ExtentReport.addAuthor(annotations.author());
+		ExtentReport.addCategory(annotations.category());
 	}
 
 	@Override
