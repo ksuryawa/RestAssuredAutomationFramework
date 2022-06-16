@@ -46,8 +46,6 @@ public class CreateEmployeeTests {
 		assertThat(response.time()).isLessThan(1000);
 
 		ApiUtils.storeStringAsJson(FrameworkConstants.getResponseJsonFilePath(), response);
-
-
 	}
 
 	@Test(description = "Create an Employee using External file")
@@ -77,8 +75,6 @@ public class CreateEmployeeTests {
 		ApiUtils.storeStringAsJson(FrameworkConstants.getResponseJsonFilePath(), response);
 
 		validateJsonSchema(response);
-
-
 	}
 
 	private void validateJsonSchema(Response response) {
