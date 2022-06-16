@@ -7,7 +7,7 @@
     <test parallel="methods" thread-count="5"
           name="/Users/kapilsuryawanshi/src/ksuryawa/RestAssuredAutomationFramework">
         <classes>
-            <!--<class name="com.ksuryawa.tests.CreateEmployeeTests">
+            <class name="com.ksuryawa.tests.CreateEmployeeTests">
                 <methods>
                     <include name="createEmployee"/>
                     <include name="createEmployeeUsingExternalFile"/>
@@ -18,7 +18,7 @@
                     <include name="getEmployees"/>
                     <include name="getEmployee"/>
                 </methods>
-            </class>-->
+            </class>
             <class name="com.ksuryawa.tests.ReqResTest">
                 <methods>
                     <include name="getReqresTest"/>
