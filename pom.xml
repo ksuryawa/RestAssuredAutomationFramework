@@ -13,10 +13,10 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.0.0-M7</version>
+                <version>${maven.surefire.plugin.version}</version>
 
                 <configuration>
-                    <forkCount>0</forkCount>
+                    <forkCount>5</forkCount>
                     <suiteXmlFiles>
                         <suiteXmlFile>testng.xml</suiteXmlFile>
                     </suiteXmlFiles>
@@ -29,6 +29,7 @@
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
+        <maven.surefire.plugin.version>3.0.0-M7</maven.surefire.plugin.version>
         <testng.version>7.4.0</testng.version>
         <restassured.version>4.5.0</restassured.version>
         <lombok.version>1.18.20</lombok.version>
