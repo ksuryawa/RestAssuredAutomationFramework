@@ -1,7 +1,6 @@
 package com.ksuryawa.listeners;
 
 import com.ksuryawa.annotations.FrameworkAnnotations;
-import com.ksuryawa.constants.FrameworkConstants;
 import com.ksuryawa.reports.ExtentLogger;
 import com.ksuryawa.reports.ExtentReport;
 import org.testng.ISuite;
@@ -9,10 +8,6 @@ import org.testng.ISuiteListener;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 import org.testng.annotations.Test;
-
-import java.awt.*;
-import java.io.File;
-import java.io.IOException;
 
 public class TestListener implements ITestListener, ISuiteListener {
 
@@ -24,11 +19,6 @@ public class TestListener implements ITestListener, ISuiteListener {
 	@Override
 	public void onFinish(ISuite suite) {
 		ExtentReport.tearDownReports();
-		try {
-			Desktop.getDesktop().browse(new File(FrameworkConstants.getExtentReportFilePath()).toURI());
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
 	}
 
 	@Override
