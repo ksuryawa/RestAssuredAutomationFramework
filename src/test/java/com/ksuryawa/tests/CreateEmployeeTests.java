@@ -1,5 +1,6 @@
 package com.ksuryawa.tests;
 
+import com.ksuryawa.annotations.FrameworkAnnotations;
 import com.ksuryawa.constants.FrameworkConstants;
 import com.ksuryawa.pojo.Employee;
 import com.ksuryawa.reports.ExtentLogger;
@@ -7,6 +8,7 @@ import com.ksuryawa.requestbuilder.RequestBuilder;
 import com.ksuryawa.utils.ApiUtils;
 import io.restassured.module.jsv.JsonSchemaValidator;
 import io.restassured.response.Response;
+import io.restassured.specification.RequestSpecification;
 import org.apache.http.HttpStatus;
 import org.testng.annotations.Test;
 
@@ -18,6 +20,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class CreateEmployeeTests extends BaseTest {
 
 	@Test
+	@FrameworkAnnotations
 	public void createEmployee() {
 
 		Employee employee = Employee.builder()
@@ -27,10 +30,12 @@ public class CreateEmployeeTests extends BaseTest {
 				.setEmail(getEmail())
 				.build();
 
-		Response response = RequestBuilder
+		RequestSpecification requestSpecification = RequestBuilder
 				.buildRequestForPostCalls()
-				.body(employee)
-				.post("/employees");
+				.body(employee);
+
+		ExtentLogger.logRequest(requestSpecification);
+		Response response = requestSpecification.post("/employees");
 
 		response.prettyPrint();
 
@@ -46,6 +51,7 @@ public class CreateEmployeeTests extends BaseTest {
 	}
 
 	@Test
+	@FrameworkAnnotations
 	public void createEmployeeUsingExternalFile() {
 
 		String resource = ApiUtils.readJsonAndGetAsString(FrameworkConstants.getRequestJsonFolderPath() + "request.json")
@@ -54,11 +60,15 @@ public class CreateEmployeeTests extends BaseTest {
 				.replace("lname", getLastName())
 				.replace("emailId", getEmail());
 
-		Response response = RequestBuilder.buildRequestForPostCalls()
-				.body(resource)
-				.post("/Employees");
+		RequestSpecification requestSpecification = RequestBuilder
+				.buildRequestForPostCalls()
+				.body(resource);
+
+		ExtentLogger.logRequest(requestSpecification);
+		Response response = requestSpecification.post("/employees");
 
 		response.prettyPrint();
+
 		ExtentLogger.logResponse(response.asPrettyString());
 
 		assertThat(response.statusCode()).isEqualTo(HttpStatus.SC_CREATED);
