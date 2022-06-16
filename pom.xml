@@ -16,7 +16,7 @@
                 <version>3.0.0-M7</version>
 
                 <configuration>
-                    <forkCount>0</forkCount>
+                    <forkCount>5</forkCount>
                     <suiteXmlFiles>
                         <suiteXmlFile>testng.xml</suiteXmlFile>
                     </suiteXmlFiles>
