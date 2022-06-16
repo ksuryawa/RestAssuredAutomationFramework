@@ -24,11 +24,11 @@ public class TestListener implements ITestListener, ISuiteListener {
 	@Override
 	public void onFinish(ISuite suite) {
 		ExtentReport.tearDownReports();
-		try {
+		/*try {
 			Desktop.getDesktop().browse(new File(FrameworkConstants.getExtentReportFilePath()).toURI());
 		} catch (IOException e) {
 			e.printStackTrace();
-		}
+		}*/
 	}
 
 	@Override
